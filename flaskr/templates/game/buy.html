@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Buying{% endblock %}</h1>
+  <a class="action" href="{{ url_for('game.end_turn') }}">STOP BUYING</a>
+  <a class="action" href="{{ url_for('game.use_rubies') }}">EXCHANGE RUBIES</a>
+{% endblock %}
+
+{% block content %}
+  <h1>Your Choices:</h1>
+  <p>Ingredients to buy left: {{ player['ingredients_left'] }}</p>
+  <p>Money: {{ player['money'] }}</p>
+  <p>Rubies: {{ player['rubies'] }}</p>
+  <table>
+      <tr>
+          <th>Orange</th>
+          <th>Green</th>
+          <th>Red</th>
+          <th>Blue</th>
+          <th>Yellow</th>
+          <th>Purple</th>
+      </tr>
+      <tr>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['orange', 1], cost=3) }}">
+              [orange, 1] - Cost 3</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['green', 1], cost=4) }}">
+              [green, 1] - Cost 4</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['red', 1], cost=6) }}">
+              [red, 1] - Cost 6</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['blue', 1], cost=5) }}">
+              [blue, 1] - Cost 5</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['yellow', 1], cost=8) }}">
+              [yellow, 1] - Cost 8</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['purple', 1], cost=9) }}">
+              [purple, 1] - Cost 9</a></td>
+
+      </tr>
+      <tr>
+          <td></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['green', 2], cost=8) }}">
+              [green, 2] - Cost 8</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['red', 2], cost=10) }}">
+              [red, 2] - Cost 10</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['blue', 2], cost=10) }}">
+              [blue, 2] - Cost 10</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['yellow', 2], cost=12) }}">
+              [yellow, 2] - Cost 12</a></td>
+
+      </tr>
+      <tr>
+          <td></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['green', 4], cost=14) }}">
+              [green, 4] - Cost 14</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['red', 4], cost=16) }}">
+              [red, 4] - Cost 16</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['blue', 4], cost=19) }}">
+              [blue, 4] - Cost 19</a></td>
+          <td><a class="action" href="{{ url_for('game.buy_one', ingredient=['yellow', 4], cost=18) }}">
+              [yellow, 4] - Cost 18</a></td>
+      </tr>
+  </table>
+
+{% endblock %}

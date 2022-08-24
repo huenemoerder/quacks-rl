@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Start a new game{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h1>Choose Number of Players:</h1>
+<br>
+  <a class="action" href="{{ url_for('game.start', num_player=1) }}">1</a>
+  <a class="action" href="{{ url_for('game.not_implemented') }}">2</a>
+  <a class="action" href="{{ url_for('game.not_implemented') }}">3</a>
+  <a class="action" href="{{ url_for('game.not_implemented') }}">4</a>
+{% endblock %}

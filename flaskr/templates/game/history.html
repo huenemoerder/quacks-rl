@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}History{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  {% for state in gamestate %}
+    <article>
+      <p>Turn: {{ state['turn'] }}</p>
+      <p>State: {{ state['state'] }}</p>
+      <p>Player Information: {{state['player'] }}</p>
+    </article>
+  {% if not loop.last %}
+  <hr>
+  {% endif %}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Game Over{% endblock %}</h1>
+  <a class="action" href="{{ url_for('game.index') }}">NEW GAME</a>
+{% endblock %}
+
+{% block content %}
+  <h1>Your final score:</h1>
+    <article>
+      <p>Total Victory Points: {{ player['total_vp'] }}</p>
+    </article>
+{% endblock %}

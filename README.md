@@ -1,1 +1,3 @@
-# quacks-rl
+# Stirring the Pot - Reinforcment Learning for Quacks of Quedlinburg
+
+Ever since the breakthrough of reinforcement learning on games like GO, this research field has become of increasing interest. Modern board games often incorporate more complex elements. This paper introduces such a novel task for reinforcement learning agents as it tackles "Quacks of Quedlinburg", a board game with risk management, deck building and an interchangeable rule set with thousands of possible combinations. We propose an environment based on the game and perform initial experiments. We found that Deep Q-Learning agents can significantly outperform simple heuristic agents.

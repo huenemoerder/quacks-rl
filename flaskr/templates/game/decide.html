@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Do you want Victory Points or to Buy ingedients?{% endblock %}</h1>
+  <a class="action" href="{{ url_for('game.decision', decision='vp') }}">VICTORY POINTS</a>
+  <a class="action" href="{{ url_for('game.decision', decision='buy') }}">BUY INGREDIENTS</a>
+{% endblock %}

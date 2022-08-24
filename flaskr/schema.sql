@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS gamestate;
+
+CREATE TABLE gamestate (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  turn INTEGER NOT NULL,
+  state TEXT NOT NULL,
+  player TEXT NOT NULL
+);

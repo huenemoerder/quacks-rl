@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Brewing{% endblock %}</h1>
+  <a class="action" href="{{ url_for('game.draw_one') }}">DRAW INGREDIENT</a>
+  <a class="action" href="{{ url_for('game.stop_brewing') }}">STOP BREWING</a>
+  <a class="action" href="{{ url_for('game.brew') }}">USE POTION</a>
+{% endblock %}
+
+{% block content %}
+  <h1>Current Gamestate:</h1>
+    <article>
+      <p>Turn: {{ state['turn_count'] }}</p>
+      <p>Exploded? {{ player['exploded'] }}</p>
+
+      <h1>Player Information:</h1>
+      <p>Total Victory Points: {{ player['total_vp'] }}</p>
+      <p>Pot: {{ player['pot'] }}</p>
+      <p>Current Position: {{ player['current_position'] }}</p>
+      <p>Current Score: {{ player['current_score'] }}</p>
+      <p>Current Victory Points: {{ player['current_vp'] }}</p>
+      <P>Current Money: {{ player['money'] }}</P>
+      <p>Current Number Rubies: {{ player['rubies'] }}</p>
+      <p>Bag: {{ player['bag'] }}</p> 
+
+    </article>
+{% endblock %}
